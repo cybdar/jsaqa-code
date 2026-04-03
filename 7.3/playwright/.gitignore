@@ -1,6 +1,5 @@
 /node_modules/
 
-
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -10,3 +9,11 @@
 
 # Local History for Visual Studio Code
 .history/
+
+# Данные для авторизации
+user.js
+
+# Отчёты о тестах
+coverage/
+test-results/
+playwright-report/

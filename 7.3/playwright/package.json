@@ -1,15 +1,15 @@
 {
-  "name": "jsaqa_3_2",
+  "name": "playwright",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "UI tests for netology.ru authorization",
+  "main": "NetologyTest.js",
   "scripts": {
-    "test": "playwright"
+    "test": "node tests/auth.test.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.12.3",
-    "playwright": "^1.12.3"
+    "playwright": "^1.59.1"
   }
 }
