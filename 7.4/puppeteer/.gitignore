@@ -21,4 +21,5 @@ coverage/
 
 .env
 .env.local
-.env.*.local
+.env.*.localnode_modules/
+.DS_Store
