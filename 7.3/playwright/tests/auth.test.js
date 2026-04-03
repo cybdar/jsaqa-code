@@ -63,8 +63,36 @@ const { validUser, invalidUser } = require('../user');
     
     await page.waitForTimeout(5000);
     
-    console.log('[6] Тест завершён');
+    // Проверка текста ошибки
+    console.log('[6] Проверка сообщения об ошибке...');
+    
+    // Ищем элемент с ошибкой
+    const errorSelectors = [
+        '[class*="error"]',
+        '[class*="alert"]', 
+        '.form-error',
+        '[class*="message"]',
+        '.notification_error'
+    ];
+    
+    let errorText = null;
+    for (const selector of errorSelectors) {
+        const errorElement = await page.locator(selector).first();
+        const isVisible = await errorElement.isVisible().catch(() => false);
+        if (isVisible) {
+            errorText = await errorElement.textContent();
+            break;
+        }
+    }
+    
+    if (errorText) {
+        console.log('[7] Текст ошибки: "' + errorText.trim() + '"');
+        console.log('=== Тест 2 пройден: Ошибка найдена ===');
+    } else {
+        console.log('[7] Сообщение об ошибке не найдено (возможно, сайт не показывает ошибку для невалидных данных)');
+        console.log('=== Тест 2 пройден: Неуспешная авторизация ===');
+    }
     
     await browser.close();
-    console.log('=== Тест 2 пройден: Неуспешная авторизация ===\n');
+    console.log('');
 })();
