@@ -7,6 +7,7 @@ module.exports = {
       throw new Error(`Selector is not clickable: ${selector}`);
     }
   },
+
   getText: async function (page, selector) {
     try {
       await page.waitForSelector(selector);
@@ -15,14 +16,23 @@ module.exports = {
       throw new Error(`Text is not available for selector: ${selector}`);
     }
   },
-  putText: async function (page, selector, text) {
+
+  selectSeat: async function (page) {
     try {
-      const inputField = await page.$(selector);
-      await inputField.focus();
-      await inputField.type(text);
-      await page.keyboard.press("Enter");
+      await page.waitForSelector('.buying-scheme__chair:not(.buying-scheme__chair_taken):not(.buying-scheme__chair_disabled)');
+      await page.click('.buying-scheme__chair:not(.buying-scheme__chair_taken):not(.buying-scheme__chair_disabled)');
     } catch (error) {
-      throw new Error(`Not possible to type text for selector: ${selector}`);
+      throw new Error(`Seat is not selectable`);
     }
   },
+
+  isButtonEnabled: async function (page, selector) {
+    try {
+      await page.waitForSelector(selector);
+      const isDisabled = await page.$eval(selector, (btn) => btn.disabled);
+      return !isDisabled;
+    } catch (error) {
+      throw new Error(`Button is not available: ${selector}`);
+    }
+  }
 };
