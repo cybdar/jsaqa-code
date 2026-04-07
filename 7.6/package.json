@@ -1,14 +1,18 @@
 {
-  "name": "cypress-test",
+  "name": "cypress-tests",
   "version": "1.0.0",
-  "description": "first tests with Cypress",
+  "description": "E2E tests for booksApp with Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open:desktop": "cypress open --e2e --browser chrome",
+    "cy:run:desktop": "cypress run --e2e --browser chrome",
+    "cy:open:mobile": "cypress open --e2e --browser chrome --config-file cypress.mobile.config.js",
+    "cy:run:mobile": "cypress run --e2e --browser chrome --config-file cypress.mobile.config.js"
   },
-  "author": "OM",
+  "keywords": ["cypress", "e2e", "testing"],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^8.3.0"
+  "devDependencies": {
+    "cypress": "^13.15.0"
   }
 }
