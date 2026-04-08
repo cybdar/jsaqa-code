@@ -1,0 +1,14 @@
+[
+  {
+    "type": "happy",
+    "login": "qamid@qamid.ru",
+    "password": "qamid",
+    "expected": "success"
+  },
+  {
+    "type": "sad",
+    "login": "wrong@wrong.ru",
+    "password": "wrong",
+    "expected": "error"
+  }
+]

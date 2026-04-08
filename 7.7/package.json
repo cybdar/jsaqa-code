@@ -1,14 +1,17 @@
 {
-  "name": "jsaqa-live-7",
+  "name": "cypress-ui-tests",
   "version": "1.0.0",
-  "description": "",
+  "description": "UI tests for cinema booking app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "test:open": "cypress open",
+    "test:record": "cypress run --record --key ваш-ключ"
   },
+  "keywords": ["cypress", "e2e", "testing"],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^9.0.0"
+  "devDependencies": {
+    "cypress": "^13.15.0"
   }
 }
