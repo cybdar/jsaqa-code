@@ -1,0 +1,13 @@
+{
+  "mainPage": {
+    "dayTab": ".page-nav__day",
+    "movieCard": ".movie",
+    "movieTimeButton": ".movie-seances__time",
+    "acceptButton": ".acceptin-button"
+  },
+  "adminLogin": {
+    "loginInput": "input[name='email']",
+    "passwordInput": "input[name='password']",
+    "submitButton": "input[type='submit']"
+  }
+}

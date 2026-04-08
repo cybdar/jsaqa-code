@@ -1,0 +1,14 @@
+{
+  "name": "cypress-ui-tests",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "cypress run",
+    "test:open": "cypress open",
+    "cy:group1": "cypress run --spec 'cypress/e2e/group1/**/*.cy.js' --record --key 8c5a729d-ebf7-4f0e-bb1a-bc15f0d89c06 --group Group1",
+    "cy:group2": "cypress run --spec 'cypress/e2e/group2/**/*.cy.js' --record --key 8c5a729d-ebf7-4f0e-bb1a-bc15f0d89c06 --group Group2",
+    "cy:parallel:groups": "npm run cy:group1 -- --browser chrome --ci-build-id $BUILD_ID & npm run cy:group2 -- --browser chrome --ci-build-id $BUILD_ID"
+  },
+  "devDependencies": {
+    "cypress": "^13.15.0"
+  }
+}
