@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: "ваш-id-из-dashboard",  // добавите позже
+  projectId: "zde9rh",
   e2e: {
     baseUrl: "http://localhost:8080",
     supportFile: false,
